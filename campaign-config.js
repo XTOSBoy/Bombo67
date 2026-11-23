@@ -33,8 +33,9 @@ const demoSectors = {
 };
 
 window.UMBRELLA_DEMO_CAMPAIGN = {
+  revision:0,
   rights:{
-    archives:true, centers:false, labs:false, security:false, mobilize:false, pda:false,
+    archives:true, centers:false, labs:false, security:false, mobilize:true, pda:false,
     council:false, councilManage:false, direction:false, incident:false, cryo:false,
     workshopVirus:false, workshopArms:false, stockUse:false, market:false, briefings:true,
     research:false, reports:true
@@ -79,6 +80,6 @@ window.UMBRELLA_DEMO_CAMPAIGN = {
 
 // Load the static interaction shim after the main defer scripts.
 const staticMode = document.createElement('script');
-staticMode.src = './static-mode.js?v=1';
+staticMode.src = './static-mode.js?v=2';
 staticMode.defer = true;
 document.head.appendChild(staticMode);
