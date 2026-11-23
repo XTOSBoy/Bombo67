@@ -1,0 +1,19 @@
+N04H / Reine Rouge — Crédits de la synthèse vocale
+
+Veronica, l’accueil générique et la déconnexion : voix Gemini « Erinome ».
+Accueils nominatifs et annonces de réseau ou de secteur : modèle Piper fr_FR-siwis-medium.
+Modèle et fiche : https://huggingface.co/rhasspy/piper-voices/blob/main/fr/fr_FR/siwis/medium/MODEL_CARD
+Données : The SIWIS French Speech Synthesis Database,
+Junichi Yamagishi, Pierre-Edouard Honnet, Philip Garner et Alexandros Lazaridis.
+https://datashare.is.ed.ac.uk/handle/10283/2353
+Licence des données SIWIS : CC BY 4.0, https://creativecommons.org/licenses/by/4.0/
+Les annonces sont sans signal radio ajouté. Les effets d’interface se jouent sur un canal distinct et peuvent être coupés séparément.
+
+Séquence Mobilisation : « Endogenous Opioid », bande originale de Resident Evil:
+The Umbrella Chronicles (Capcom). Fichier fourni pour la campagne RP.
+Annonce de mobilisation synthétisée en français avec eSpeak NG,
+filtrée façon microphone radio. Sirène de scène originale synthétisée par le terminal.
+
+Protocole Contact, mobilisation du Haut-Conseil : « Resident Evil 9 Requiem –
+Leon Kennedy vs Umbrella Elite Guard Theme Music Contact ».
+Fichier MP3 fourni par l’organisateur pour la campagne RP privée.

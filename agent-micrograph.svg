@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 368" role="img" aria-labelledby="title">
+  <title id="title">Reconstitution artistique RP d’un agent T imaginaire parmi des cellules sanguines</title>
+  <defs>
+    <radialGradient id="field"><stop stop-color="#543742"/><stop offset="1" stop-color="#151922"/></radialGradient>
+    <radialGradient id="cell" cx=".48" cy=".37" r=".63"><stop stop-color="#4b2734"/><stop offset=".37" stop-color="#803441"/><stop offset=".72" stop-color="#c87175"/><stop offset="1" stop-color="#59323d"/></radialGradient>
+    <radialGradient id="virus" cx=".39" cy=".3" r=".65"><stop stop-color="#d4ede0"/><stop offset=".69" stop-color="#81a49c"/><stop offset="1" stop-color="#435764"/></radialGradient>
+    <filter id="grain"><feTurbulence type="fractalNoise" baseFrequency=".69" numOctaves="2" stitchTiles="stitch"/></filter>
+    <g id="disc"><ellipse rx="54" ry="37" fill="url(#cell)" stroke="#cf9394" stroke-opacity=".53"/><path d="M-23-3Q0-17 22-3Q17 12 0 13Q-21 12-23-3Z" fill="#5b303e" opacity=".52"/></g>
+    <g id="grainAgent" stroke="#aec7bb" stroke-width="1.6">
+      <path d="M0-15 0-23M10-11l5-7M15 0h7m-12 10 6 7M0 15v8m-9-12-5 7m-1-18h-8m13-10-5-7" stroke-linecap="round" fill="none"/>
+      <path d="M-14-7-5-16 8-14 16-4 13 10 4 16-10 13-16 4Z" fill="url(#virus)"/>
+      <path d="M-8-4-2-9 7-6 9 2 3 8-6 6Z" fill="#638275" stroke="none"/>
+    </g>
+  </defs>
+  <rect width="480" height="368" fill="url(#field)"/>
+  <g opacity=".9">
+    <use href="#disc" transform="translate(65 95)rotate(-25)scale(1.03)"/><use href="#disc" transform="translate(187 49)rotate(32)scale(1.14)"/>
+    <use href="#disc" transform="translate(320 64)rotate(-25)scale(.75)"/><use href="#disc" transform="translate(445 88)rotate(37)scale(1.13)"/>
+    <use href="#disc" transform="translate(119 205)rotate(28)scale(1.3)"/><use href="#disc" transform="translate(403 218)rotate(-30)scale(1.2)"/>
+    <use href="#disc" transform="translate(41 317)rotate(-17)scale(.89)"/><use href="#disc" transform="translate(192 307)rotate(17)scale(1.05)"/>
+    <use href="#disc" transform="translate(326 296)rotate(61)scale(.78)"/><use href="#disc" transform="translate(491 288)rotate(-12)scale(.83)"/>
+  </g>
+  <use href="#grainAgent" transform="translate(249 180)rotate(12)scale(1.35)"/><use href="#grainAgent" transform="translate(288 218)rotate(-15)scale(.65)"/>
+  <use href="#grainAgent" transform="translate(295 147)rotate(-30)scale(.85)"/><use href="#grainAgent" transform="translate(215 223)rotate(5)scale(.5)"/>
+  <use href="#grainAgent" transform="translate(336 177)rotate(20)scale(.55)"/>
+  <rect width="480" height="368" filter="url(#grain)" opacity=".13"/>
+  <path d="M249 148v-23l-35-22h-64" fill="none" stroke="#d3eadc" opacity=".85"/>
+  <text x="151" y="94" fill="#ddf1e4" font-family="monospace" font-size="12">AGENT T / RP</text>
+  <rect x="11" y="11" width="458" height="346" rx="1" fill="none" stroke="#dbe5eb" opacity=".29"/>
+  <text x="25" y="344" fill="#e2e4e9" font-family="monospace" font-size="10" letter-spacing=".6">ILLUSTRATION FICTIVE · NON À L’ÉCHELLE</text>
+</svg>

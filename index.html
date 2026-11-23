@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111215">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="Portail Umbrella Corporation, terminal fictif pour un roleplay Resident Evil sur Roblox.">
+  <title>Intranet Umbrella Corpo. Redcliff City</title>
+  <link rel="icon" href="./umbrella.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./redcliff-ui.css">
+  <link rel="stylesheet" href="./communications.css">
+  <link rel="stylesheet" href="./terminal-v5.css?v=6.1.7">
+  <link rel="stylesheet" href="./operations.css?v=6.12">
+  <link rel="stylesheet" href="./briefings.css?v=6.13.1">
+  <link rel="stylesheet" href="./mobilization.css?v=3">
+  <link rel="stylesheet" href="./pda.css?v=2">
+  <link rel="stylesheet" href="./high-council.css?v=1">
+  <script>window.REDCLIFF_PORT='port/4186';</script>
+  <script src="./campaign-config.js?v=6.2" defer></script>
+  <script src="./archives.js" defer></script>
+  <script src="./archives-dossiers.js" defer></script>
+  <script src="./redcliff-dossiers.js?v=6.4" defer></script>
+  <script src="./languages.js?v=6.20" defer></script>
+  <script src="./portal.js?v=6.20" defer></script>
+  <script src="./organizations-data.js?v=5.5" defer></script>
+  <script src="./organizations.js?v=6.4" defer></script>
+  <script src="./armory.js?v=6.11" defer></script>
+  <script src="./charter.js?v=6.6" defer></script>
+  <script src="./briefings.js?v=6.13.1" defer></script>
+  <script src="./operations.js?v=6.20" defer></script>
+  <script src="./intranet.js?v=6.20" defer></script>
+  <script src="./communications.js?v=6.20" defer></script>
+  <script src="./mobilization.js?v=5" defer></script>
+  <script src="./pda.js?v=4" defer></script>
+  <script src="./high-council.js?v=1" defer></script>
+</head>
+<body data-mode="login" data-access-pending>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <svg aria-hidden="true" class="symbols" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="lock-icon" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"/></symbol>
+    <symbol id="eye-icon" viewBox="0 0 24 24"><path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6-10-6-10-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="arrow-icon" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+    <symbol id="alert-icon" viewBox="0 0 24 24"><path d="M12 8v5m0 3v1M10.4 4 2.5 18a1 1 0 0 0 .9 1.5h17.2a1 1 0 0 0 .9-1.5L13.6 4a1.8 1.8 0 0 0-3.2 0Z"/></symbol>
+    <symbol id="audio-icon" viewBox="0 0 24 24"><path d="M11 5 6 9H3v6h3l5 4V5Zm4 4a4 4 0 0 1 0 6m3-9a8 8 0 0 1 0 12"/></symbol>
+    <symbol id="wave-icon" viewBox="0 0 24 24"><path d="M3 12h3l3-6 4 12 3-6h5"/></symbol>
+    <symbol id="terminal-icon" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m7 9 3 3-3 3m6 0h4"/></symbol>
+  </svg>
+  <header class="top">
+    <div class="wordmark"><img src="./umbrella.svg" alt="" width="42" height="42"><span>UMBRELLA<span>CORPORATION</span></span></div>
+    <span class="top-hub mono">Intranet Umbrella Corpo. Redcliff City</span>
+    <div class="top-utility">
+      <span class="site-clock mono"><span>PARIS</span><time id="site-clock" aria-label="Heure de Paris"></time></span>
+      <label class="language-picker mono" title="Les textes RP et les voix restent dans leur langue d’origine."><span>Langue</span><select id="site-language" aria-label="Langue de l’interface"><option value="fr" lang="fr">Français</option><option value="en" lang="en">English</option></select></label>
+    </div>
+    <div class="top-tools"><span class="top-status"><i></i><span id="system-status">TERMINAL PRÊT</span></span>
+      <button type="button" id="voice-toggle" class="voice-toggle mono" aria-pressed="true" aria-label="Voix N04H" title="Voix N04H"><svg class="icon" aria-hidden="true"><use href="#audio-icon"/></svg><span class="audio-label">N04H</span></button>
+      <button type="button" id="sfx-toggle" class="voice-toggle mono" aria-pressed="true" aria-label="Effets sonores" title="Effets sonores"><svg class="icon" aria-hidden="true"><use href="#wave-icon"/></svg><span class="audio-label">SFX</span></button></div>
+  </header>
+  <div id="critical" class="critical mono" hidden>
+    <svg class="icon" aria-hidden="true"><use href="#alert-icon"/></svg> ALERTE CRITIQUE DE SÉCURITÉ · TENTATIVE D’INTRUSION DÉTECTÉE · TERMINAL VERROUILLÉ
+  </div>
+  <main id="main" class="stage" tabindex="-1">
+    <aside class="access-photo" aria-label="Capture du laboratoire NEST dans Resident Evil 2">
+      <div class="photo-top mono"><span><i></i> ARCHIVE VISUELLE</span><span>NEST / E-02</span></div>
+      <div class="photo-reticle" aria-hidden="true"></div>
+      <div class="photo-brand" aria-hidden="true"><img src="./umbrella-login.png" alt="" width="129" height="129"><span class="mono">UMBRELLA<span>CORPORATION</span></span></div>
+      <div class="photo-caption">
+        <p class="mono tag">UMBRELLA CORPORATION / SITE 01</p>
+        <p class="site-name">Complexe<br> de Redcliff<span>.</span></p>
+        <p class="photo-caption-note">Point d’accès du personnel scientifique<br class="photo-break"> et du Conseil de Sécurité.</p>
+      </div>
+      <div class="photo-telemetry mono"><span>NEST · SECTEUR EST</span><a href="https://www.polygon.com/resident-evil-2-remake-guide/2019/2/9/18218463/leon-2nd-nest-laboratory-e-02-east-area-destroy-plant-43-trophy-location/" target="_blank" rel="noopener noreferrer">Capture Capcom via Polygon</a><span class="photo-bars" aria-hidden="true"></span></div>
+    </aside>
+    <section id="login" class="panel" aria-labelledby="login-title">
+      <div class="panel-code mono"><span><svg class="icon" aria-hidden="true"><use href="#terminal-icon"/></svg> TERMINAL UC–01</span><span class="clearance"><svg class="icon" aria-hidden="true"><use href="#lock-icon"/></svg> ACCÈS RESTREINT</span></div>
+      <div class="intro">
+        <div class="login-intro-copy">
+          <p class="tag mono">AUTHENTIFICATION DU PERSONNEL</p>
+          <h1 id="login-title" tabindex="-1">Portail Umbrella</h1>
+        </div>
+        <div class="login-seal" aria-hidden="true">
+          <img src="./umbrella-login.png" alt="" width="129" height="129">
+        </div>
+        <p class="subtitle" id="login-caption">Saisis ton matricule et ton code RP pour accéder à ta campagne.</p>
+        <a class="google-sites-direct" href="./" target="_blank" rel="noopener noreferrer" hidden>Ouvrir l’intranet dans un nouvel onglet</a>
+      </div>
+      <form id="login-form">
+        <div class="field"><label for="matricule">Matricule</label><input id="matricule" maxlength="32" autocapitalize="characters" spellcheck="false" autocomplete="off" required></div>
+        <div class="field"><label for="access-code">Code d’accès RP</label><div class="password">
+          <input id="access-code" type="password" maxlength="96" autocomplete="off" placeholder="Saisir le code attribué" required>
+          <button type="button" id="toggle-code" class="icon-btn" aria-label="Afficher le code" aria-pressed="false"><svg class="icon" aria-hidden="true"><use href="#eye-icon"/></svg></button>
+        </div></div>
+        <p class="error" id="feedback" role="status" hidden></p>
+        <div class="attempts mono">
+          <span id="attempt-count">ESSAIS RESTANTS : 3/3</span>
+          <span id="segments" class="segments" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <button class="primary" type="submit" id="submit"><span>Initialiser la connexion</span><svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+      </form>
+    </section>
+    <section id="curfew" class="curfew-screen" aria-labelledby="curfew-title" hidden>
+      <label class="language-picker curfew-language mono"><span>Langue</span><select id="curfew-language" aria-label="Langue de l’interface"><option value="fr" lang="fr">Français</option><option value="en" lang="en">English</option></select></label>
+      <div class="curfew-symbol" aria-hidden="true"><img src="./umbrella.svg" alt="" width="112" height="112"></div>
+      <p class="tag mono">UMB.NET / DIRECTION SUPRÊME</p>
+      <h1 id="curfew-title" tabindex="-1">Couvre-feu en cours</h1>
+      <div class="curfew-message">
+        <p>couvre-feu activé par le Conseil de la Direction. Veuillez attendre que le couvre feu se finisse. Le personnel est donc inactif pendant ce temps.</p>
+        <p class="curfew-suspension mono">MAINTENANCE GÉNÉRALE · TOUS NIVEAUX SUSPENDUS</p>
+      </div>
+      <div class="curfew-clocks">
+        <div><span class="mono tag">HEURE RÉELLE · PARIS</span><time class="mono" id="curfew-clock"></time></div>
+        <div><span class="mono tag">PLAGE DU COUVRE-FEU</span><strong class="mono" id="curfew-hours"></strong></div>
+        <div><span class="mono tag">TEMPS RESTANT</span><strong class="mono" id="curfew-remaining" role="timer" aria-label="Temps restant avant la réouverture"></strong></div>
+      </div>
+      <div class="ops-actions">
+        <button id="curfew-logout" type="button" class="secondary" hidden>Fermer la session</button>
+        <button id="curfew-audio" type="button" class="secondary">Activer le son d’attente</button>
+      </div>
+      <details id="curfew-emergency" class="curfew-emergency">
+        <summary>Levée d’urgence · niveau 5</summary>
+        <form id="curfew-emergency-form">
+          <p class="minor">N’ouvre pas de session. Cette commande lève le couvre-feu et désactive sa répétition, sans lever une éventuelle maintenance manuelle.</p>
+          <div class="ops-fields">
+            <div class="field"><label for="curfew-director">Matricule de Direction</label><input id="curfew-director" type="text" autocomplete="username" maxlength="40" required></div>
+            <div class="field"><label for="curfew-code">Code d’accès RP</label><input id="curfew-code" type="password" autocomplete="current-password" maxlength="128" required></div>
+          </div>
+          <button class="primary" type="submit">Confirmer la levée d’urgence</button>
+          <p id="curfew-emergency-feedback" class="error" role="status"></p>
+        </form>
+      </details>
+    </section>
+    <section id="pda-lock" class="curfew-screen pda-lock-screen" aria-labelledby="pda-lock-title" hidden>
+      <div class="curfew-symbol" aria-hidden="true"><img src="./umbrella.svg" alt="" width="112" height="112"></div>
+      <p class="tag mono">UMB.NET / SÉCURITÉ DES TERMINAUX</p>
+      <h1 id="pda-lock-title" tabindex="-1">PDA neutralisé</h1>
+      <div class="curfew-message">
+        <p id="pda-lock-copy"></p>
+        <p id="pda-lock-status" class="curfew-suspension mono" role="status"></p>
+      </div>
+      <div class="curfew-clocks pda-lock-clocks">
+        <div><span class="mono tag">TERMINAL</span><strong class="mono" id="pda-lock-device"></strong></div>
+        <div><span class="mono tag">HEURE RÉELLE · PARIS</span><time class="mono" id="pda-lock-clock"></time></div>
+        <div><span class="mono tag">TEMPS RESTANT</span><strong class="mono" id="pda-lock-remaining" role="timer" aria-live="off"></strong></div>
+      </div>
+      <progress id="pda-lock-progress" max="600" value="0" aria-label="Progression de la remise en service" hidden></progress>
+      <p id="pda-lock-feedback" class="minor" role="status" hidden></p>
+      <div class="ops-actions">
+        <button id="pda-return" type="button" class="secondary">Retour à la connexion</button>
+      </div>
+    </section>
+    <section id="maintenance" class="panel maintenance-panel" aria-labelledby="maintenance-title" hidden>
+      <div class="panel-code mono"><span>UMB.NET / ARRÊT GÉNÉRAL</span><span class="stripe" aria-hidden="true"></span></div>
+      <div class="intro">
+        <div class="emblem"><img src="./umbrella.svg" alt="" width="68" height="68"></div>
+        <p class="tag mono">DIRECTION SUPRÊME / N04H</p>
+        <h1 id="maintenance-title" tabindex="-1">Maintenance générale</h1>
+        <p id="maintenance-caption" class="subtitle">Les connexions, les communications et les opérations RP sont suspendues. Les données sont conservées et l’intranet rouvrira automatiquement.</p>
+      </div>
+      <p id="maintenance-clock" class="boot-clock mono" role="timer" aria-label="Temps avant la réouverture"></p>
+      <p id="emergency-reopening" class="minor" hidden><span>Fin de l’arrêt d’urgence (heure de Paris) :</span> <time id="emergency-reopening-at" class="mono"></time></p>
+      <p id="maintenance-feedback" class="minor" role="status"></p>
+      <div id="maintenance-actions" class="ops-actions"></div>
+    </section>
+    <section id="initialize" class="panel" aria-labelledby="initialize-title" hidden>
+      <div class="panel-code mono"><span>UMB.NET / N04H</span><span class="stripe" aria-hidden="true"></span></div>
+      <div class="intro">
+        <div class="emblem"><img src="./umbrella.svg" alt="" width="68" height="68"></div>
+        <p class="tag mono" id="boot-tag">ACCÈS VALIDÉ</p>
+        <h1 id="initialize-title" tabindex="-1">Initialisation</h1>
+        <p class="subtitle" id="boot-step">Ouverture du canal interne…</p>
+      </div>
+      <progress id="boot-progress" max="5" value="0" aria-label="Initialisation de l’intranet"></progress>
+      <p class="boot-clock mono" id="boot-clock">05 S</p>
+    </section>
+    <section id="veronica" class="panel lock-panel" aria-labelledby="lock-title" hidden>
+      <div class="intro">
+        <div class="emblem locked-emblem">
+          <img src="./umbrella.svg" alt="" width="200" height="200">
+          <span class="veronica-lock"><svg class="icon" aria-hidden="true"><use href="#lock-icon"/></svg><b class="mono">VERROUILLÉ</b></span>
+        </div>
+        <h1 id="lock-title" tabindex="-1">Accès bloqué <span>Séquence Veronica</span></h1>
+        <p class="veronica-copy">Trois échecs d’authentification consécutifs ont été enregistrés. Le terminal a été isolé et ne peut plus ouvrir de session tant qu’il n’a pas été réinitialisé.</p>
+      </div>
+      <div class="veronica-report mono" aria-label="Rapport d’intrusion simulé">
+        <div><strong>RAPPORT D’INTRUSION · VERONICA</strong><strong>STATUT : ISOLÉ</strong></div>
+        <div><span>HORODATAGE</span><time id="veronica-time"></time></div>
+        <div><span>MATRICULE TENTÉ</span><span>MASQUÉ</span></div>
+        <p>Simulation RP. Aucun rapport réel ni donnée personnelle transmis.</p>
+      </div>
+      <div class="veronica-actions">
+        <button type="button" id="replay-intrusion" class="text-button">Écouter l’alerte</button>
+        <button type="button" id="reset" class="secondary">Réinitialiser le terminal RP</button>
+      </div>
+    </section>
+    <section id="signoff" class="signoff" aria-labelledby="signoff-title" hidden>
+      <div class="signoff-card">
+        <div class="wordmark signoff-mark"><img src="./umbrella.svg" alt="" width="92" height="92"><span>UMBRELLA<span>CORPORATION</span></span></div>
+        <h1 id="signoff-title" tabindex="-1" lang="en">Our business is life itself.</h1>
+        <p class="mono">TERMINAL UC–01 / FIN DE SESSION</p>
+      </div>
+    </section>
+    <section id="workspace" class="workspace" aria-label="Intranet Umbrella Corpo. Redcliff City" hidden>
+      <div class="desk-header">
+        <div class="desk-brand"><span class="tag mono">UMB.NET / TERMINAL PERSONNEL</span><strong>Intranet Umbrella Corpo. Redcliff City</strong><span class="mono preview-badge">CAMPAGNE ACTIVE</span></div>
+        <div class="desk-pass"><button type="button" id="site-emergency" class="secondary site-emergency" hidden>Arrêt d’urgence</button><button type="button" id="bio-emergency" class="secondary" hidden>Urgence BIOHAZARD</button><button type="button" id="bio-ribbon" class="text-button" hidden></button><span class="mono" id="desk-id"></span><button type="button" id="logout" class="text-button">Fermer la session</button></div>
+      </div>
+      <div class="desk-layout">
+        <button id="nav-toggle" class="module-menu secondary" type="button" aria-controls="desk-nav" aria-expanded="false">Menu des modules</button>
+        <nav id="desk-nav" class="desk-nav" aria-label="Modules du terminal">
+          <div class="nav-group">
+            <p class="mono nav-caption">01 / TERMINAL</p>
+            <button type="button" data-tab="profile">Poste de travail</button>
+            <button type="button" data-tab="radio">Communications</button>
+            <button type="button" data-tab="mail">Boîte mails RP</button>
+            <button type="button" data-tab="centers" data-right="centers">Data centers</button>
+          </div>
+          <div class="nav-group">
+            <p class="mono nav-caption">02 / GROUPE UMBRELLA</p>
+            <button type="button" data-tab="organizations">Annuaire du groupe</button>
+            <button type="button" data-tab="blackwater" data-right="blackwater">Blackwater</button>
+            <div id="organization-featured" class="org-nav-featured"></div>
+            <details id="organization-more" class="org-nav-more">
+              <summary>Autres organisations</summary>
+              <div id="organization-other" class="org-nav-other"></div>
+            </details>
+          </div>
+          <div class="nav-group">
+            <p class="mono nav-caption">03 / RECHERCHE</p>
+            <button type="button" data-tab="archives" data-right="archives">Registre des agents</button>
+            <button type="button" data-tab="research" data-right="research">Recherche &amp; création</button>
+            <button type="button" data-tab="field-map" data-right="labs">Localisation de nos labos</button>
+            <button type="button" data-tab="labs" data-right="labs">Plans et secteurs</button>
+            <button type="button" data-tab="cryo" data-right="labs">Cryogénisation</button>
+            <button type="button" data-tab="research-sites" data-right="labs">Sites de recherche</button>
+            <button type="button" data-tab="workshop-virus" data-right="workshopVirus">Mélanger les virus (RP)</button>
+          </div>
+          <div class="nav-group">
+            <p class="mono nav-caption">04 / SÉCURITÉ</p>
+            <button type="button" data-tab="security" data-right="security">Maintien de la sécurité</button>
+            <button type="button" data-tab="briefings">Avis de recherche &amp; opérations</button>
+            <button type="button" data-tab="reports">Articles et rapports d’incident</button>
+            <button type="button" data-tab="council" data-right="council">Bastion &amp; armurerie</button>
+            <button type="button" data-tab="mobilization" data-right="mobilize">Mobilisation des unités</button>
+            <button type="button" data-tab="pda" data-right="pda">PDA de terrain</button>
+            <button type="button" data-tab="council-roster" data-right="councilManage">Registre privé du Conseil</button>
+            <button type="button" data-tab="council-manage" data-right="councilManage">Gestion des sanctions</button>
+            <button type="button" data-tab="biohazard">Alertes BIOHAZARD</button>
+            <button type="button" data-tab="charter">Charte Umbrella</button>
+          </div>
+          <div class="nav-group">
+            <p class="mono nav-caption">05 / LOGISTIQUE</p>
+            <button type="button" data-tab="workshop-weapons" data-right="workshopArms">Création des armes (RP)</button>
+            <button type="button" data-tab="workshop-bio" data-right="workshopArms">Créations biologiques (RP)</button>
+            <button type="button" data-tab="stocks" data-right="labs">Armureries &amp; convois</button>
+            <button type="button" data-tab="market" data-right="market">Black Market</button>
+            <button type="button" data-tab="industry" data-right="workshopArms">Industrie de l’armement</button>
+            <button type="button" data-tab="finance" data-right="direction">Trésorerie RP</button>
+            <button type="button" data-tab="direction" data-right="direction">Registre Direction</button>
+          </div>
+          <p class="mono nav-foot"><i></i> RÉSEAU REDCLIFF</p>
+        </nav>
+        <div class="desk-content">
+          <p id="desk-status" class="desk-status mono" role="status"></p>
+    <section id="profile" class="desk-view" aria-labelledby="profile-title" hidden>
+      <div class="view-heading">
+        <p class="tag mono">DOSSIER DU PERSONNEL / SESSION AUTORISÉE</p>
+        <h1 id="profile-title" tabindex="-1"></h1>
+        <p class="subtitle" id="profile-group"></p>
+      </div>
+      <div class="n04h-console">
+        <div class="n04h-eye" aria-hidden="true"><span></span></div>
+        <div><p class="tag mono">REINE ROUGE / N04H</p><p id="welcome-line"></p>
+        <button type="button" id="replay-welcome" class="text-button">Écouter N04H</button></div>
+      </div>
+      <div id="profile-notice" hidden></div>
+      <dl class="profile-data">
+        <div><dt>Matricule</dt><dd id="profile-id"></dd></div>
+        <div><dt>Habilitation</dt><dd id="profile-level"></dd></div>
+        <div><dt>Division / fonction</dt><dd id="profile-division"></dd></div>
+      </dl>
+      <button type="button" id="open-archives" class="primary archive-open"><span>Voir les virus et agents</span><svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+      <div class="profile-shortcuts" aria-label="Accès rapides">
+        <button type="button" class="secondary" data-shortcut="labs">Carte des laboratoires<svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+        <button type="button" class="secondary" data-shortcut="radio">Communications<svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+        <button type="button" class="secondary" data-shortcut="reports">Rapports d’incident<svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+        <button type="button" class="secondary" data-shortcut="europe">Umbrella Europe<svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+        <button type="button" class="secondary" data-shortcut="organizations">Annuaire du groupe<svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg></button>
+      </div>
+    </section>
+    <section id="archives" class="desk-view" aria-labelledby="archive-title" hidden>
+      <div class="archive-heading">
+        <div>
+          <p class="tag mono">REDCLIFF / DIVISION RECHERCHE</p>
+          <h1 id="archive-title" tabindex="-1">Registre des agents</h1>
+          <p class="subtitle">Dossiers par nature de l’agent : origines, cas documentés, observations et distinctions.</p>
+        </div>
+        <button type="button" id="back-profile" class="secondary"><svg class="icon" aria-hidden="true"><use href="#arrow-icon"/></svg> Mon dossier</button>
+      </div>
+      <div class="archive-controls">
+        <div class="archive-filters" role="group" aria-label="Filtrer par nature">
+          <button type="button" data-media="all" aria-pressed="true">Tous les agents</button>
+          <button type="button" data-media="virus" aria-pressed="false">Virus</button>
+          <button type="button" data-media="parasite" aria-pressed="false">Parasites</button>
+          <button type="button" data-media="fungus" aria-pressed="false">Agents fongiques</button>
+          <button type="button" data-media="other" aria-pressed="false">Autres dossiers</button>
+        </div>
+        <div class="field">
+          <label for="archive-search">Rechercher dans les archives</label>
+          <input id="archive-search" type="search" placeholder="Ex. Veronica, Raccoon City…" autocomplete="off">
+        </div>
+      </div>
+      <details class="archive-entry visual-reference">
+        <summary><strong>Planches d’observation : sang, circulation et agent fictif</strong></summary>
+        <div id="reference-plates" class="visual-plates">
+          <figure><img loading="lazy" src="./circulation.svg" alt="Schéma simplifié du trajet entre cœur, poumons et reste du corps"><figcaption>01 / Circulation sanguine <span>Schéma pédagogique simplifié.</span></figcaption></figure>
+          <figure><img loading="lazy" src="./blood-micrograph.webp" alt="Micrographie réelle montrant des globules rouges et plusieurs types de globules blancs"><figcaption>02 / Cellules du sang <a href="https://wwwn.cdc.gov/phil/Details.aspx?pid=15133" target="_blank" rel="noopener">Micrographie réelle · CDC / Dr Candler Ballard ↗</a></figcaption></figure>
+          <figure><img loading="lazy" src="./agent-micrograph.svg" alt="Illustration de fiction : formes virales imaginaires entre des cellules sanguines"><figcaption>03 / Agent T dans le sang <span>Reconstitution RP : l’agent est fictif, ce n’est pas une photographie scientifique.</span></figcaption></figure>
+        </div>
+      </details>
+      <p id="archive-count" class="archive-count mono" role="status"></p>
+      <p id="archive-empty" class="archive-empty" hidden>Aucune fiche ne correspond. Essaie un autre terme ou sélectionne « Tous les agents ».</p>
+      <div id="archive-list" class="archive-list"></div>
+      <p class="archive-note">Archives de fiction : les fiches peuvent révéler l’intrigue. Les observations servent au RP ; elles ne décrivent pas de mécanismes médicaux réels.</p>
+    </section>
+    <section id="research" class="desk-view" aria-label="Recherche et création" hidden></section>
+    <section id="europe" class="desk-view" aria-label="Umbrella Europe" hidden></section>
+    <section id="organizations" class="desk-view" aria-label="Annuaire du groupe" hidden></section>
+    <div id="organization-views"></div>
+    <section id="labs" class="desk-view" aria-label="Carte des laboratoires" hidden></section>
+    <section id="cryo" class="desk-view" aria-label="Cryogénisation" hidden></section>
+    <section id="security" class="desk-view" aria-label="Maintien de la sécurité" hidden></section>
+    <section id="briefings" class="desk-view" aria-label="Avis de recherche &amp; opérations" hidden></section>
+    <section id="council" class="desk-view" aria-label="Bastion et armurerie" hidden></section>
+    <section id="mobilization" class="desk-view" aria-label="Mobilisation des unités" hidden></section>
+    <section id="pda" class="desk-view" aria-label="PDA de terrain" hidden></section>
+    <section id="reports" class="desk-view" aria-label="Articles et rapports d’incident" hidden></section>
+    <section id="centers" class="desk-view" aria-label="Data centers" hidden></section>
+    <section id="finance" class="desk-view" aria-label="Trésorerie RP" hidden></section>
+    <section id="radio" class="desk-view" aria-label="Communications" hidden></section>
+    <section id="direction" class="desk-view" aria-label="Registre Direction" hidden></section>
+    <section id="field-map" class="desk-view" aria-label="Localisation de nos labos" hidden></section>
+    <section id="research-sites" class="desk-view" aria-label="Sites de recherche" hidden></section>
+    <section id="workshop-virus" class="desk-view" aria-label="Mélanger les virus" hidden></section>
+    <section id="workshop-weapons" class="desk-view" aria-label="Création des armes" hidden></section>
+    <section id="workshop-bio" class="desk-view" aria-label="Créations biologiques" hidden></section>
+    <section id="stocks" class="desk-view" aria-label="Armureries et convois" hidden></section>
+    <section id="market" class="desk-view" aria-label="Black Market" hidden></section>
+    <section id="industry" class="desk-view" aria-label="Industrie de l’armement" hidden></section>
+    <section id="blackwater" class="desk-view" aria-label="Conseil Blackwater" hidden></section>
+    <section id="biohazard" class="desk-view" aria-label="Alertes BIOHAZARD" hidden></section>
+    <section id="council-manage" class="desk-view" aria-label="Gestion des sanctions" hidden></section>
+    <section id="council-roster" class="desk-view" aria-label="Registre privé du Conseil" hidden></section>
+    <section id="charter" class="desk-view" aria-label="Charte Umbrella" hidden></section>
+        </div>
+      </div>
+    </section>
+    <noscript>Active JavaScript pour utiliser le terminal RP.</noscript>
+  </main>
+  <dialog id="council-notice" class="council-dialog" aria-labelledby="notice-title"></dialog>
+  <dialog id="stock-use-dialog" class="council-dialog stock-use-dialog" aria-labelledby="stock-use-title" aria-describedby="stock-use-description"></dialog>
+  <dialog id="site-emergency-dialog" class="council-dialog" aria-labelledby="site-emergency-title" aria-describedby="site-emergency-description">
+    <h2 id="site-emergency-title">Arrêt d’urgence de l’intranet</h2>
+    <p id="site-emergency-description">Toute la campagne sera inaccessible pendant 24 heures, même pour le niveau 5. Il n’y a pas de réouverture anticipée. Aucune donnée ne sera effacée.</p>
+    <p id="site-emergency-feedback" class="error" role="status" hidden></p>
+    <div class="ops-actions"><button type="button" id="site-emergency-cancel" class="secondary">Annuler</button><button type="button" id="site-emergency-confirm" class="primary">Couper l’intranet pour 24 h</button></div>
+  </dialog>
+  <dialog id="bio-popup" class="bio-popup" aria-label="Alerte de campagne"></dialog>
+  <dialog id="high-council-confirm" class="council-dialog" aria-labelledby="high-council-confirm-title">
+    <h2 id="high-council-confirm-title">Mobiliser la Garde élitaire ?</h2>
+    <p>Toutes les sessions, y compris la Direction, seront verrouillées pendant la diffusion de 4 min 09 s. La reprise sera automatique, sans déconnexion.</p>
+    <p id="high-council-feedback" class="minor" role="status"></p>
+    <div class="ops-actions">
+      <button type="button" id="high-council-cancel" class="secondary">Annuler</button>
+      <button type="button" id="high-council-launch" class="primary">Confirmer la mobilisation générale</button>
+    </div>
+  </dialog>
+  <dialog id="high-council-lock" class="mobil-lockscreen high-council-lock" aria-labelledby="high-council-title" aria-describedby="high-council-copy">
+    <div class="high-council-wrap">
+      <p class="high-council-band mono">UMB.NET / PROTOCOLE CONTACT / PRIORITÉ ABSOLUE</p>
+      <div class="high-council-mark" aria-hidden="true"><img src="./umbrella.svg" alt="" width="90" height="90"></div>
+      <h2 id="high-council-title" tabindex="-1">Mobilisation du Haut-Conseil</h2>
+      <p id="high-council-copy" class="high-council-blurb">La Garde élitaire a placé l’intranet sous scellés. Toutes les activités sont suspendues jusqu’à la fin de la diffusion.</p>
+      <div class="mobil-lock-meter">
+        <span id="high-council-timer" class="mobil-clock" role="timer" aria-label="Temps restant" aria-live="off">04:09</span>
+        <progress id="high-council-meter" class="mobil-progress" max="1" value="0" aria-label="Progression de la séquence"></progress>
+        <p id="high-council-status" class="high-council-state mono" role="status">SYNCHRONISATION DE LA DIFFUSION</p>
+      </div>
+      <button type="button" id="high-council-sound" class="secondary" aria-pressed="false">Activer le son</button>
+      <p id="high-council-audio-status" class="minor" role="status"></p>
+      <p class="minor">Réouverture automatique. Ta session reste connectée.</p>
+    </div>
+  </dialog>
+  <div class="veronica-footer mono" id="veronica-footer" hidden>TERMINAL SCELLÉ · SÉQUENCE VERONICA ACTIVE</div>
+  <footer class="bottom mono">
+    <span>RESIDENT EVIL / ROBLOX RP</span>
+    <span>Fiction non officielle · Aucun compte Roblox requis <a class="footer-audio-credit" href="./credits-audio.txt" target="_blank" rel="noopener">Crédits audio</a></span>
+    <span class="footer-code">UC–01 / V6.2</span>
+  </footer>
+<script data-pplx-inline-edit>
+(function () {
+  if (window === window.top) return;
+
+  const allowedParentOrigins = ["https://www.perplexity.ai","https://perplexity.ai","https://testing.perplexity.ai","https://staging.perplexity.ai","https://*.preview.i.perplexity.ai","http://perplexity.localhost","http://localhost:1420","http://127.0.0.1:1420","http://localhost:3000","http://127.0.0.1:3000","http://localhost:5173","http://127.0.0.1:5173"];
+  const MAX_FONT_BYTES = 500 * 1024;
+  const MAX_TOTAL_FONT_BYTES = 2 * 1024 * 1024;
+  const DEFAULT_LINE_HEIGHT = 16;
+  let scrollForwarding = false;
+  let scrollRaf = 0;
+  let trustedTopOrigin = null;
+
+  // Allow entries like "https://*.preview.i.perplexity.ai" — the wildcard
+  // matches a single DNS label (no dots), so "https://*.foo" cannot stretch
+  // across multiple labels.
+  function matchesAllowedOrigin(origin) {
+    if (!origin) return false;
+    for (const entry of allowedParentOrigins) {
+      if (!entry.includes("*")) {
+        if (entry === origin) return true;
+        continue;
+      }
+      const pattern = new RegExp(
+        "^" +
+          entry.replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, "[^.]+") +
+          "$",
+      );
+      if (pattern.test(origin)) return true;
+    }
+    return false;
+  }
+
+  // Trust decision: when the sender is same-origin-visible (event.origin is a
+  // real origin like https://www.perplexity.ai) we trust event.origin directly.
+  // When event.origin is "null" (opaque broker srcdoc), we fall back to the
+  // broker's stamped `parentOrigin` to identify the top window. The fallback
+  // is claim-only — we rely on the browser's native `targetOrigin` enforcement
+  // on the response path (see postToTrustedTop) to ensure replies can't be
+  // delivered to anyone but the actual top window of that claimed origin.
+  function getTrustedParentOrigin(event) {
+    const forwardedParentOrigin =
+      typeof event.data.parentOrigin === "string" ? event.data.parentOrigin : null;
+    const parentOrigin = event.origin === "null" ? forwardedParentOrigin : event.origin;
+    return matchesAllowedOrigin(parentOrigin) ? parentOrigin : null;
+  }
+
+  // All responses go to window.top with targetOrigin = the allowlisted origin.
+  // An attacker that iframes us inside their own null-origin broker can claim
+  // any parentOrigin they like, but the browser will drop the reply whenever
+  // the real top's origin doesn't match — so the screenshot never leaves.
+  function postToTrustedTop(message) {
+    if (!trustedTopOrigin) return;
+    try {
+      window.top.postMessage(message, trustedTopOrigin);
+    } catch (_error) {}
+  }
+
+  const PICK_CAPABILITIES = ["pick"];
+  const PICK_CHAIN_LENGTH = 4;
+  const PICK_MAX_TEXT_CHARS = 120;
+  const PICK_MAX_HTML_CHARS = 300;
+
+  function truncate(value, maxChars) {
+    return value.length > maxChars ? value.slice(0, maxChars - 1) + "…" : value;
+  }
+
+  function isPickableElement(element) {
+    return (
+      element instanceof Element &&
+      element !== document.documentElement &&
+      element !== document.body
+    );
+  }
+
+  function resolvePickTarget(x, y) {
+    if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+    const element = document.elementFromPoint(x, y);
+    return isPickableElement(element) ? element.closest("svg") || element : null;
+  }
+
+  function pickLabel(element) {
+    if (element.id) return element.localName + "#" + element.id;
+    return [element.localName].concat(Array.from(element.classList).slice(0, 2)).join(".");
+  }
+
+  // Only attributes that help find the element in source. data-* values and URL
+  // query strings or fragments can carry tokens.
+  const PICK_ATTRIBUTES = new Set([
+    "id",
+    "class",
+    "name",
+    "type",
+    "role",
+    "alt",
+    "aria-label",
+    "href",
+    "src",
+  ]);
+
+  function pickAttributeValue(attribute) {
+    return attribute.name === "href" || attribute.name === "src"
+      ? attribute.value.split(/[?#]/)[0]
+      : attribute.value;
+  }
+
+  function describePickElement(element) {
+    const chain = [];
+    for (
+      let current = element;
+      isPickableElement(current) && chain.length < PICK_CHAIN_LENGTH;
+      current = current.parentElement
+    ) {
+      chain.unshift(current);
+    }
+    const attributes = Array.from(element.attributes)
+      .filter((attribute) => PICK_ATTRIBUTES.has(attribute.name))
+      .map((attribute) => ` ${attribute.name}="${pickAttributeValue(attribute).replace(/"/g, "&quot;")}"`)
+      .join("");
+    const text = (element.innerText || element.textContent || "").replace(/\s+/g, " ").trim();
+    return {
+      chain: chain.map(pickLabel),
+      html: truncate(`<${element.localName}${attributes}>`, PICK_MAX_HTML_CHARS),
+      text: text ? truncate(text, PICK_MAX_TEXT_CHARS) : undefined,
+    };
+  }
+
+  // Hover asks once per frame, and innerText on a large section forces layout,
+  // so only the rect is re-read while the pointer stays on the same element.
+  // Clicks ask for fresh details since the page may have changed the element.
+  let lastPick = null;
+
+  function describePickTarget(element, fresh) {
+    if (fresh || lastPick?.element !== element) {
+      lastPick = { element, details: describePickElement(element) };
+    }
+    const rect = element.getBoundingClientRect();
+    return {
+      rect: { x: rect.left, y: rect.top, width: rect.width, height: rect.height },
+      ...lastPick.details,
+    };
+  }
+
+  function inlineAll(original, clone) {
+    if (original.nodeType !== 1 || clone.nodeType !== 1) return;
+
+    try {
+      const computedStyle = getComputedStyle(original);
+      // cssText on a computed style is the serialized declaration in modern
+      // Chromium/Safari — a single read beats enumerating ~400 longhand
+      // properties. Firefox returns "" here, so we fall back on empty.
+      const serialized = computedStyle.cssText;
+      if (serialized) {
+        clone.style.cssText = serialized;
+      } else {
+        const parts = new Array(computedStyle.length);
+        for (let index = 0; index < computedStyle.length; index += 1) {
+          const property = computedStyle[index];
+          parts[index] = `${property}:${computedStyle.getPropertyValue(property)};`;
+        }
+        clone.style.cssText = parts.join("");
+      }
+    } catch (_error) {}
+
+    const originalChildren = original.children;
+    const clonedChildren = clone.children;
+    for (
+      let index = 0;
+      index < originalChildren.length && index < clonedChildren.length;
+      index += 1
+    ) {
+      inlineAll(originalChildren[index], clonedChildren[index]);
+    }
+  }
+
+  function extractFontUrl(srcValue) {
+    const matches = [
+      ...srcValue.matchAll(
+        /url\(["']?([^"')]+)["']?\)(?:\s*format\(["']?([^"')]+)["']?\))?/gi,
+      ),
+    ];
+    if (matches.length === 0) return null;
+    const woff2 = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff2"));
+    if (woff2) return woff2[1];
+    const woff = matches.find((m) => m[2] && m[2].toLowerCase().includes("woff"));
+    if (woff) return woff[1];
+    return matches[0][1];
+  }
+
+  // Cache resolved font URL -> data URI across captures. Fonts on a page
+  // essentially never change, and a batch run emits multiple captures back to
+  // back — without this we'd refetch + re-base64 every time.
+  const fontDataUriCache = new Map();
+  const SRC_DECLARATION_RE = /src\s*:\s*[^;}]+/i;
+
+  async function fetchAsDataUri(url) {
+    if (fontDataUriCache.has(url)) return fontDataUriCache.get(url);
+    let dataUri = null;
+    try {
+      const response = await fetch(url, { mode: "cors", credentials: "omit" });
+      if (response.ok) {
+        const blob = await response.blob();
+        if (blob.size <= MAX_FONT_BYTES) {
+          dataUri = await new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onloadend = () =>
+              resolve(typeof reader.result === "string" ? reader.result : null);
+            reader.onerror = () => resolve(null);
+            reader.readAsDataURL(blob);
+          });
+        }
+      }
+    } catch (_error) {
+      dataUri = null;
+    }
+    fontDataUriCache.set(url, dataUri);
+    return dataUri;
+  }
+
+  function collectFontFaceRuleTexts() {
+    const rules = [];
+    for (const sheet of document.styleSheets) {
+      let cssRules;
+      try {
+        cssRules = sheet.cssRules;
+      } catch (_error) {
+        continue;
+      }
+      if (!cssRules) continue;
+      for (const rule of cssRules) {
+        const cssText = rule.cssText || "";
+        if (cssText.startsWith("@font-face")) rules.push(cssText);
+      }
+    }
+    return rules;
+  }
+
+  async function buildInlinedFontCss() {
+    const ruleTexts = collectFontFaceRuleTexts();
+    if (ruleTexts.length === 0) return null;
+
+    const resolved = ruleTexts.map((cssText) => {
+      if (!SRC_DECLARATION_RE.test(cssText)) return null;
+      const srcMatch = cssText.match(/src\s*:\s*([^;}]+)[;}]/i);
+      if (!srcMatch) return null;
+      const url = extractFontUrl(srcMatch[1]);
+      if (!url) return null;
+      try {
+        return { cssText, url: new URL(url, document.baseURI).href };
+      } catch (_error) {
+        return null;
+      }
+    });
+
+    const dataUris = await Promise.all(
+      resolved.map((entry) => (entry ? fetchAsDataUri(entry.url) : Promise.resolve(null))),
+    );
+
+    const inlined = [];
+    let totalBytes = 0;
+    for (let index = 0; index < resolved.length; index += 1) {
+      const entry = resolved[index];
+      const dataUri = dataUris[index];
+      if (!entry || !dataUri) continue;
+      const approxBytes = dataUri.length * 0.75;
+      if (totalBytes + approxBytes > MAX_TOTAL_FONT_BYTES) break;
+      totalBytes += approxBytes;
+      inlined.push(entry.cssText.replace(SRC_DECLARATION_RE, `src: url("${dataUri}")`));
+    }
+    return inlined.length > 0 ? inlined.join("\n") : null;
+  }
+
+  function stripExternal(clone) {
+    const images = clone.querySelectorAll("img");
+    for (let index = 0; index < images.length; index += 1) {
+      const src = images[index].getAttribute("src");
+      if (src && !src.startsWith("data:")) images[index].removeAttribute("src");
+    }
+
+    const elements = clone.querySelectorAll("*");
+    for (let index = 0; index < elements.length; index += 1) {
+      const style = elements[index].style.cssText;
+      if (style && style.includes("url(")) {
+        elements[index].style.cssText = style.replace(
+          /url\(["']?(?!data:)[^)"']*["']?\)/gi,
+          "none",
+        );
+      }
+    }
+  }
+
+  function emitScroll() {
+    scrollRaf = 0;
+    if (!scrollForwarding) return;
+    postToTrustedTop({
+      type: "INLINE_EDIT_SCROLL",
+      scrollX: window.scrollX,
+      scrollY: window.scrollY,
+      capabilities: PICK_CAPABILITIES,
+    });
+  }
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (!scrollForwarding || scrollRaf) return;
+      scrollRaf = requestAnimationFrame(emitScroll);
+    },
+    { passive: true, capture: true },
+  );
+
+  async function handleCaptureRequest(event) {
+    const requestId = event.data.requestId;
+    const scrollX = window.scrollX;
+    const scrollY = window.scrollY;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    function postResult(dataUrl) {
+      postToTrustedTop({
+        type: "INLINE_EDIT_SCREENSHOT_RESULT",
+        requestId,
+        dataUrl,
+        scrollX,
+        scrollY,
+      });
+    }
+
+    try {
+      // Wait for any pending web fonts to resolve so both inline metrics and
+      // the @font-face inlining below see the same loaded faces.
+      if (document.fonts && document.fonts.ready) {
+        try {
+          await document.fonts.ready;
+        } catch (_error) {}
+      }
+
+      const clone = document.documentElement.cloneNode(true);
+      inlineAll(document.documentElement, clone);
+
+      const removedNodes = clone.querySelectorAll("script,link[rel=\"stylesheet\"],style");
+      for (let index = 0; index < removedNodes.length; index += 1) {
+        removedNodes[index].remove();
+      }
+
+      stripExternal(clone);
+
+      // Re-embed web fonts as data-URI @font-face rules so the SVG rasterizer
+      // can resolve them — external font URLs aren't fetched during
+      // foreignObject rendering, which would otherwise force a fallback face
+      // and change text metrics.
+      const inlinedFontCss = await buildInlinedFontCss();
+      if (inlinedFontCss) {
+        const styleEl = document.createElement("style");
+        styleEl.textContent = inlinedFontCss;
+        const head = clone.querySelector("head");
+        if (head) head.appendChild(styleEl);
+        else clone.insertBefore(styleEl, clone.firstChild);
+      }
+
+      const html = new XMLSerializer().serializeToString(clone);
+      const svg =
+        `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">` +
+        '<foreignObject width="100%" height="100%">' +
+        `<div xmlns="http://www.w3.org/1999/xhtml" style="width:${width}px;height:${height}px;overflow:hidden">` +
+        `<div style="position:relative;left:-${scrollX}px;top:-${scrollY}px">` +
+        html +
+        "</div></div></foreignObject></svg>";
+      const svgUrl = `data:image/svg+xml;charset=utf-8,${encodeURIComponent(svg)}`;
+      const image = new Image();
+      image.onload = function () {
+        const canvas = document.createElement("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0);
+        postResult(canvas.toDataURL("image/png"));
+      };
+      image.onerror = function () {
+        postResult(null);
+      };
+      image.src = svgUrl;
+    } catch (_error) {
+      postResult(null);
+    }
+  }
+
+  window.addEventListener("message", function (event) {
+    if (!event.data) return;
+    // Only accept messages from the direct parent frame. Blocks sibling /
+    // unrelated-window postMessage senders that could otherwise reach us.
+    if (event.source !== window.parent) return;
+
+    const trustedParentOrigin = getTrustedParentOrigin(event);
+    if (!trustedParentOrigin) return;
+    trustedTopOrigin = trustedParentOrigin;
+
+    if (event.data.type === "INLINE_EDIT_PICK") {
+      const element = resolvePickTarget(event.data.x, event.data.y);
+      postToTrustedTop({
+        type: "INLINE_EDIT_PICK_RESULT",
+        seq: event.data.seq,
+        target: element ? describePickTarget(element, event.data.fresh === true) : null,
+      });
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_START") {
+      scrollForwarding = true;
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_STOP") {
+      scrollForwarding = false;
+      if (scrollRaf) cancelAnimationFrame(scrollRaf);
+      scrollRaf = 0;
+      return;
+    }
+
+    if (event.data.type === "INLINE_EDIT_SCROLL_BY") {
+      const { deltaX, deltaY, deltaMode } = event.data;
+      if (!scrollForwarding || !Number.isFinite(deltaX) || !Number.isFinite(deltaY)) return;
+      if (deltaMode !== 0 && deltaMode !== 1 && deltaMode !== 2) return;
+      const lineHeight =
+        parseFloat(getComputedStyle(document.documentElement).lineHeight) || DEFAULT_LINE_HEIGHT;
+      const scaleX = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerWidth : 1;
+      const scaleY = deltaMode === 1 ? lineHeight : deltaMode === 2 ? window.innerHeight : 1;
+      // The selection overlay receives the wheel event instead of this iframe.
+      // Instant scrolling preserves trackpad deltas even on smooth-scroll sites.
+      window.scrollBy({ left: deltaX * scaleX, top: deltaY * scaleY, behavior: "instant" });
+      emitScroll();
+      return;
+    }
+
+    if (event.data.type !== "INLINE_EDIT_CAPTURE_REQUEST") return;
+
+    handleCaptureRequest(event);
+  });
+})();
+
+
+</script></body>
+</html>

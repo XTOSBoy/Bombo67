@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 368" role="img" aria-labelledby="title">
+  <title id="title">Schéma simplifié de la circulation sanguine</title>
+  <defs>
+    <marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill="#fd9292" d="M0 0 10 5 0 10z"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path fill="#9abde7" d="M0 0 10 5 0 10z"/></marker>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M0 24V0H24" fill="none" stroke="#38424e" opacity=".55"/></pattern>
+  </defs>
+  <rect width="480" height="368" fill="#17202b"/><rect width="480" height="368" fill="url(#grid)"/>
+  <g stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M193 161H123V71h57" marker-end="url(#blue)" stroke="#9abde7"/>
+    <path d="M299 71h56v90h-61" marker-end="url(#red)" stroke="#fd9292"/>
+    <path d="M285 211h69v88h-64" marker-end="url(#red)" stroke="#fd9292"/>
+    <path d="M196 299h-72v-88h73" marker-end="url(#blue)" stroke="#9abde7"/>
+  </g>
+  <g fill="#202e3c" stroke="#6f8398" stroke-width="1.5">
+    <rect x="193" y="45" width="94" height="53" rx="3"/>
+    <rect x="199" y="147" width="82" height="78" rx="3"/>
+    <rect x="195" y="271" width="90" height="55" rx="3"/>
+  </g>
+  <g fill="#eef4fa" font-family="system-ui,sans-serif" font-weight="700" font-size="15" text-anchor="middle">
+    <text x="240" y="77">Poumons</text><text x="240" y="192">Cœur</text><text x="240" y="305">Corps</text>
+  </g>
+  <g font-family="system-ui,sans-serif" font-size="11" font-weight="700">
+    <text x="33" y="348" fill="#fd9292">● Sang riche en oxygène</text>
+    <text x="253" y="348" fill="#9abde7">● Sang moins riche en oxygène</text>
+  </g>
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 510">
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M30 0H0V30" fill="none" stroke="#805a5c" stroke-opacity=".2"/></pattern>
+    <pattern id="blocks" width="58" height="41" patternUnits="userSpaceOnUse" patternTransform="rotate(-12)"><rect x="4" y="4" width="47" height="30" rx="2" fill="#291d21" stroke="#473137" stroke-width="1"/><path d="M24 7v24m-17-11h41" stroke="#403036" opacity=".6"/></pattern>
+    <linearGradient id="shade" x2="0" y2="1"><stop stop-color="#150f12"/><stop offset="1" stop-color="#0d1117"/></linearGradient>
+  </defs>
+  <path fill="url(#shade)" d="M0 0h900v510H0z"/>
+  <path fill="url(#grid)" d="M0 0h900v510H0z"/>
+  <path d="M61 59 252 41 423 58 601 38 805 65 846 123 870 275 810 365 764 361 701 416 572 459 409 458 280 432 91 420 38 328 49 233 23 160Z" fill="url(#blocks)" stroke="#735158" stroke-width="2"/>
+  <path d="M529-17Q474 60 517 104T544 177Q535 211 473 231T443 299Q469 338 568 358T705 400Q757 434 698 531" fill="none" stroke="#141922" stroke-width="33"/>
+  <path d="M529-17Q474 60 517 104T544 177Q535 211 473 231T443 299Q469 338 568 358T705 400Q757 434 698 531" fill="none" stroke="#52646f" stroke-opacity=".45" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <g fill="none" stroke="#71575d" stroke-width="3">
+    <path d="M38 161 191 119 423 99 506 95 681 89 827 124"/>
+    <path d="M50 274 165 234 312 230 456 224 624 197 855 218"/>
+    <path d="M61 359 221 335 369 344 529 313 688 284 855 282"/>
+    <path d="M192 61 229 150 217 258 239 432M327 55 328 157 345 261 367 448M688 56 675 148 675 244 717 366M770 69 767 212 789 334"/>
+    <path d="M76 407 215 399 400 387 510 407 610 406 680 412"/>
+  </g>
+  <g fill="none" stroke="#bd7378" stroke-opacity=".64" stroke-width="2" stroke-dasharray="6 7">
+    <path d="M180 117 378 97 621 122 756 255 594 372 360 398 153 326 468 235 621 122"/>
+    <path d="M360 398 468 235 756 255M180 117 153 326"/>
+  </g>
+  <g fill="#b9a3a4" font-size="14" font-family="monospace" letter-spacing="2">
+    <text x="76" y="91">HISTORIQUE</text><text x="278" y="66">UNIVERSITÉ</text>
+    <text x="614" y="86">DISTRICT MÉDICAL</text><text x="684" y="218">INDUSTRIE</text>
+    <text x="97" y="290">JARDINS OUEST</text><text x="554" y="420">DOCKS</text>
+    <text x="252" y="448">CITÉ FERROVIAIRE</text><text x="419" y="199">ÎLOT ADMIN.</text>
+  </g>
+  <g transform="translate(817 411)" fill="#c9a9a7" stroke="#c9a9a7"><path d="M0 62h64M0 55v7m32-7v7m32-7v7M31 13l-7 19 7-5 7 5Z" fill="none"/><text x="27" y="9" stroke="none" font-family="monospace">N</text></g>
+</svg>

@@ -1,0 +1,25 @@
+.high-council-card { margin-block:0 var(--s4); border-color:#675442; border-left:3px solid #ca9864; background:linear-gradient(110deg,#241a17,#17181d 65%); }
+.high-council-card .tag { color:#edbc85; }
+.high-council-card .primary { min-height:44px; }
+.high-council-logbook { margin-top:.8rem; }
+.high-council-logbook summary { cursor:pointer; color:#e9c9a6; }
+.high-council-log { margin:.5rem 0 0; padding-inline-start:1.15rem; }
+.high-council-log li+li { margin-top:.35rem; }
+.high-council-lock { background:radial-gradient(ellipse at 50% 32%,#301414,#100909 66%,#050404); }
+.high-council-lock::backdrop { background:#090505; }
+.high-council-wrap { width:min(100% - 2rem,44rem); min-height:100%; margin:auto; padding-block:clamp(1.75rem,6vh,4rem); display:grid; justify-items:center; align-content:center; text-align:center; gap:.8rem; }
+.high-council-band { width:100%; border-block:1px solid #825b47; background:#281b18; color:#f4cfac; padding:.65rem .7rem; font-size:.73rem; letter-spacing:.08em; margin:0; }
+.high-council-mark { display:grid; place-items:center; margin:.6rem 0; width:clamp(76px,19vw,118px); aspect-ratio:1; border:1px solid #9f7157; box-shadow:0 0 34px #a9383259; border-radius:50%; background:#100909; }
+.high-council-mark img { width:73%; height:auto; }
+.high-council-wrap h2 { margin:0; font:900 clamp(1.85rem,5.8vw,3.5rem)/1.02 var(--font-display); color:#fff2e3; letter-spacing:-.045em; text-wrap:balance; }
+.high-council-wrap h2:focus { outline:none; }
+.high-council-blurb { margin:0; max-width:43ch; color:#edc5b7; }
+.high-council-wrap .mobil-lock-meter { max-width:28rem; margin-top:.55rem; gap:.55rem; }
+.high-council-wrap .mobil-clock { color:#ffb28d; }
+.high-council-wrap .mobil-progress { color:#d4886f; }
+.high-council-wrap .mobil-progress::-webkit-progress-value { background:#d4886f; }
+.high-council-wrap .mobil-progress::-moz-progress-bar { background:#d4886f; }
+.high-council-state { color:#ffd0a6; letter-spacing:.06em; }
+.high-council-wrap .minor { margin:0; color:#e4c9bd; }
+.high-council-wrap button { min-height:44px; justify-self:center; margin:0; }
+#high-council-audio-status:empty,#high-council-feedback:empty { display:none; }
